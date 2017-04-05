@@ -1,4 +1,4 @@
-document.write('<h1>Hello world 1</h1>')
+document.write('<h1>Hello world here</h1>')
 
 var a = () => {
 	console.log("hello");

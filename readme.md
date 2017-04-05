@@ -1,19 +1,27 @@
-#TESTING WITH WEBPACK
+# TESTING WITH WEBPACK && Manage project with webpack :boom:
 
-bundle js to 'bundle.js'
+
+bundle js to 'bundle.js'    
+
 extract css to 'style.css'
 
-##Manage project with webpack
+
+### Install Dependencies
+```sh
+npm install
+```
 
 ### development
 ```sh
 $ npm run dev
 ```
+
 ### build
 ```sh
 $ npm run build
 ```
 
-- webpack
-- babel
-- sass
+* webpack
+* babel
+* sass
+* postcss(autoprefix)
