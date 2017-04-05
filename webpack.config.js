@@ -14,7 +14,7 @@ module.exports = {
 			use: ExtractTextPlugin.extract({
 				fallback: 'style-loader',
 				//resolve-url-loader may be chained before sass-loader if necessary
-				use: ['css-loader', 'sass-loader']
+				use: ['css-loader?minimize=true&importLoaders=2', 'postcss-loader', 'sass-loader']
 			})
 		}, {
 			test: /\.js$/,
