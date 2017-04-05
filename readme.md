@@ -2,25 +2,26 @@
 
 
 bundle js to 'bundle.js'    
-
-extract css to 'style.css'
-
-
+extract css to 'style.css'    
+   
+   
+   
 ### Install Dependencies
 ```sh
-npm install
+$ npm install
 ```
-
-### development
+   
+### Local development
 ```sh
 $ npm run dev
 ```
-
-### build
+   
+### Build production
 ```sh
 $ npm run build
 ```
-
+   
+### Main Dependencies
 * webpack
 * babel
 * sass
