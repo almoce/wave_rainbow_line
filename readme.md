@@ -1,10 +1,5 @@
-# TESTING WITH WEBPACK && Manage project with webpack :boom:
-
-
-bundle js to 'bundle.js'    
-extract css to 'style.css'    
-   
-   
+# Manage or test project with webpack :boom:
+#### webpack simple project boilerplate	
    
 ### Install Dependencies
 ```sh
@@ -16,7 +11,10 @@ $ npm install
 $ npm run dev
 ```
    
-### Build production
+### Build production    
+   
+build js and css file in dist dirctory
+   
 ```sh
 $ npm run build
 ```
