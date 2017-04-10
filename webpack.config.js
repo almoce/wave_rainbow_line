@@ -1,9 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path'),
+	webpack = require('webpack'),
+	ExtractTextPlugin = require('extract-text-webpack-plugin'),
+	HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './main.js',
+	entry: './src/appWebpack.js',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
@@ -29,6 +30,9 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin('styles.css'),
+		new HtmlWebpackPlugin({
+			template: 'src/index.html'
+		})
 	],
 	devServer: {
 		contentBase: './src',
