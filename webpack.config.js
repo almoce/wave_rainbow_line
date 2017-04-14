@@ -3,6 +3,16 @@ var path = require('path'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 	HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var isProd = process.env.NODE_ENV === 'production'
+
+var scssExtract = isProd ? ExtractTextPlugin.extract({
+				fallback: 'style-loader',
+				//resolve-url-loader may be chained before sass-loader if necessary
+				use: ['css-loader?minimize=true&importLoaders=2', 'postcss-loader', 'sass-loader']
+			}): ['style-loader', 'css-loader?minimize=true&importLoaders=2', 'postcss-loader', 'sass-loader']
+
+
+
 module.exports = {
 	entry: './src/appWebpack.js',
 	output: {
@@ -12,11 +22,7 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.scss$/,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				//resolve-url-loader may be chained before sass-loader if necessary
-				use: ['css-loader?minimize=true&importLoaders=2', 'postcss-loader', 'sass-loader']
-			})
+			use: scssExtract
 		}, {
 			test: /\.js$/,
 			exclude: /(node_modules)/,
