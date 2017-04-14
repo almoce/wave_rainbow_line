@@ -9,6 +9,10 @@
   },
   "author": "Wence Ye",
   "license": "ISC",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
