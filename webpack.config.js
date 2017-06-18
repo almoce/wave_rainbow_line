@@ -17,6 +17,8 @@ module.exports = {
 	entry: './src/appWebpack.js',
 	output: {
 		filename: 'bundle.js',
+		// single page application local server fallback
+		// publicPath: '/',
 		path: path.resolve(__dirname, 'dist')
 	},
 	module: {
@@ -42,6 +44,8 @@ module.exports = {
 	],
 	devServer: {
 		contentBase: './src',
+		// single page application local server fallback
+		// historyApiFallback: true
 	},
 	performance: {
 		hints: false
