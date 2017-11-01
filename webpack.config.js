@@ -14,9 +14,14 @@ var scssExtract = isProd ? ExtractTextPlugin.extract({
 
 
 module.exports = {
-	entry: './src/appWebpack.js',
+	entry: {
+		app: './src/appWebpack.js',
+		vendor: [
+			'p5'
+		]
+	},
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].js',
 		// single page application local server fallback
 		// publicPath: '/',
 		path: path.resolve(__dirname, 'dist')
@@ -37,8 +42,14 @@ module.exports = {
 		}]
 	},
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: ['vendor'],
+			minChunks: Infinity,
+		}),
 		new ExtractTextPlugin('styles.css'),
 		new HtmlWebpackPlugin({
+			title:'My app',
+			chunks:['app','vendor'],
 			template: 'src/index.html'
 		})
 	],
